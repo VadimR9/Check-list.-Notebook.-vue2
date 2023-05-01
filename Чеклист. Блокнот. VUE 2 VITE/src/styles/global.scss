@@ -1,0 +1,88 @@
+:root {
+  --primary: #702C7E;
+  --primary-hover: #a441b8;
+  --second: #C4296C;
+  --second-hover: #f1448f;
+  --success: #F4BA46;
+  --success-hover: #f7ca70;
+  --info: #EFEFEF;
+  --info-hover: #ffffff;
+  --warning: #0083B6;
+  --warning-hover: #04a1df;
+  --danger: #DF3F3E;
+  --danger-hover: #fd3d3d;
+  --action: #ED732E;
+  --action-hover: #f87c34;
+  --green: #6DD1B0;
+  --green-hover: #79e9c3;
+  --transparent: #ffffff00;
+  --transparent-hover: #ffffff00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+  margin: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.billboard__ready{
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-weight: 500;
+  line-height: 1.6em;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  transition: all 0.4s ease;
+  text-align: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #eaeaea;
+    visibility: visible;
+    opacity: 1;
+    background-color: #ef534f;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: 100% 100%;
+  }
+
+  &::before {
+    visibility: visible;
+    opacity: 1;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #eaeaea;
+  }
+
+  &:hover {
+    color: #ef534f;
+
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+      transform-origin: 0 100%;
+    }
+  }
+}
